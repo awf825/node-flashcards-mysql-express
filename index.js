@@ -16,7 +16,7 @@ const connection = mysql2.createPool({
 app.get("/words", async(req, res) => {
     try {
         const data = await connection.promise().query(
-          `SELECT * from ${process.env.TABLE} LIMIT 250;`
+          `SELECT * from ${process.env.TABLE} LIMIT 1000;`
         );
 
         res.status(202).json({
